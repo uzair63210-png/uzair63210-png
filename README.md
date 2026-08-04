@@ -1,5 +1,5 @@
 # 💫 About Me:
-Currently in 2nd year studying ENTC engineering.<br>
+Currently in 3nd year studying ENTC engineering.<br>
 
 
 ## 🌐 Socials:
