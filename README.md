@@ -27,4 +27,4 @@ Passionate about digital electronics, hardware design, and embedded systems.
 
 ## 🎮 Play My Snake Game
 
-[![Play Snake](https://img.shields.io/badge/▶_PLAY_SNAKE-238636?style=for-the-badge&logo=github&logoColor=white)](https://uzair63210-png.github.io/)
+[![Play Snake](https://img.shields.io/badge/▶_PLAY_SNAKE-238636?style=for-the-badge&logo=github&logoColor=white)](https://uzair63210-png.github.io/uzair63210-png/)
