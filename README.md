@@ -1,26 +1,47 @@
-# 💫 About Me:
-Currently in 3rd year studying ENTC engineering.<br>
-Passionate about digital electronics, hardware design, and embedded systems.
+# 🐍 Snake Game
 
-## 📚 Currently Learning:
-- Digital Electronics (NPTEL Course)
-- Verilog & VHDL for FPGA Design
-- System Verilog for Verification
+A smooth, animated snake game playable in the browser. Arrow keys / WASD to move,
+Space to pause, Enter to restart. Works on mobile with swipe and on-screen buttons.
 
-## 🌐 Socials:
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/Tech_emerged)
+## Run locally
 
-# 💻 Tech Stack:
-![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) 
-![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) 
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
-![Verilog](https://img.shields.io/badge/Verilog-%23C63D2F.svg?style=for-the-badge&logo=verilog&logoColor=white)
-![VHDL](https://img.shields.io/badge/VHDL-%233498DB.svg?style=for-the-badge&logo=VHDL&logoColor=white)
+Just open `index.html` in a browser — no build step, no dependencies.
 
-# 📊 GitHub Stats:
-![](https://github-readme-stats.vercel.app/api?username=uzair63210-png&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
-![](https://nirzak-streak-stats.vercel.app/?user=uzair63210-png&theme=dark&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=uzair63210-png&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
+Or serve it:
 
----
-[![](https://visitcount.itsvg.in/api?id=uzair63210-png&icon=0&color=0)](https://visitcount.itsvg.in)
+```bash
+python3 -m http.server 8000
+# → http://localhost:8000
+```
+
+## Files
+
+| File | Purpose |
+|------|---------|
+| `index.html` | Page structure |
+| `css/style.css` | Dark GitHub-style theme, scoreboard, overlays |
+| `js/game.js` | Game engine — interpolated animation, particles, effects |
+
+## Deploy to GitHub Pages
+
+**Option A — profile site (root URL):**
+
+```bash
+git checkout -b gh-pages
+git add .
+git commit -m "Add snake game"
+git push origin gh-pages
+```
+
+Then: repo **Settings → Pages → Source → Deploy from branch → gh-pages → /(root)**.
+
+Live at `https://uzair63210-png.github.io/`
+
+**Option B — project site:** push these files to a repo named e.g. `snake-game`,
+enable Pages on its `main` branch. Live at `https://uzair63210-png.github.io/snake-game/`
+
+## Link from your profile README
+
+```markdown
+[![Play Snake](https://img.shields.io/badge/PLAY_SNAKE-238636?style=for-the-badge&logo=github)](https://uzair63210-png.github.io/)
+```

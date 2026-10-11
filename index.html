@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐍 Snake</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="frame">
+  <h1 class="title">SNAKE</h1>
+  <p class="subtitle">eat · grow · survive</p>
+
+  <div class="scoreboard">
+    <div class="stat">
+      <span class="stat-label">SCORE</span>
+      <span class="stat-value" id="score">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">BEST</span>
+      <span class="stat-value best" id="best">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">SPEED</span>
+      <span class="stat-value" id="speed">1x</span>
+    </div>
+  </div>
+
+  <div class="canvas-wrap">
+    <canvas id="board" width="420" height="420"></canvas>
+    <div id="overlay" class="overlay">
+      <h2 id="overlay-title">Game Over</h2>
+      <p id="overlay-msg">Score: 0</p>
+      <button id="restart-btn">Play Again</button>
+    </div>
+  </div>
+
+  <div class="hint desktop-hint">
+    <kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> / <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> move
+    &nbsp;·&nbsp; <kbd>Space</kbd> pause &nbsp;·&nbsp; <kbd>Enter</kbd> restart
+  </div>
+
+  <div class="touch-controls" id="touch-controls">
+    <span></span><button data-dir="up" aria-label="Up">▲</button><span></span>
+    <button data-dir="left" aria-label="Left">◀</button>
+    <button data-dir="down" aria-label="Down">▼</button>
+    <button data-dir="right" aria-label="Right">▶</button>
+  </div>
+</div>
+
+<script src="js/game.js"></script>
+</body>
+</html>

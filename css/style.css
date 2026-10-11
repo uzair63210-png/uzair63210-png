@@ -1,0 +1,205 @@
+:root {
+  --bg: #0d1117;
+  --panel: #161b22;
+  --border: #30363d;
+  --text: #c9d1d9;
+  --muted: #8b949e;
+  --green: #3fb950;
+  --green-dark: #238636;
+  --blue: #58a6ff;
+  --red: #f85149;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(88, 166, 255, 0.07), transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(63, 185, 80, 0.06), transparent 50%),
+    var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  overflow-x: hidden;
+}
+
+.frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: 8px;
+  background: linear-gradient(90deg, var(--green), var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 30px rgba(63, 185, 80, 0.25);
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  margin: 4px 0 20px;
+  text-transform: uppercase;
+}
+
+.scoreboard {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.stat {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 18px;
+  min-width: 86px;
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--green);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-value.best { color: var(--blue); }
+
+.canvas-wrap {
+  position: relative;
+  line-height: 0;
+}
+
+#board {
+  width: min(92vw, 420px);
+  height: auto;
+  aspect-ratio: 1;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow:
+    0 0 0 1px rgba(88, 166, 255, 0.05),
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 45px rgba(63, 185, 80, 0.08);
+  touch-action: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: rgba(13, 17, 23, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  line-height: 1.4;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay h2 {
+  font-size: 2rem;
+  color: var(--red);
+  letter-spacing: 3px;
+}
+
+.overlay p { color: var(--muted); font-size: 0.95rem; }
+
+.overlay button {
+  margin-top: 8px;
+  padding: 12px 34px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  background: linear-gradient(180deg, var(--green), var(--green-dark));
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(35, 134, 54, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.overlay button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 26px rgba(35, 134, 54, 0.55);
+}
+
+.hint {
+  margin-top: 16px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.hint kbd {
+  display: inline-block;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  padding: 2px 7px;
+  font-family: ui-monospace, monospace;
+  font-size: 0.7rem;
+  margin: 0 1px;
+}
+
+.touch-controls {
+  display: none;
+  grid-template-columns: repeat(3, 62px);
+  gap: 8px;
+  margin-top: 18px;
+}
+
+@media (pointer: coarse) {
+  .touch-controls { display: grid; }
+  .desktop-hint { display: none; }
+}
+
+.touch-controls button {
+  width: 62px;
+  height: 62px;
+  font-size: 1.2rem;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 0.1s ease, transform 0.1s ease;
+}
+
+.touch-controls button:active {
+  background: var(--green);
+  color: var(--bg);
+  transform: scale(0.94);
+}
