@@ -24,3 +24,7 @@ Passionate about digital electronics, hardware design, and embedded systems.
 
 ---
 [![](https://visitcount.itsvg.in/api?id=uzair63210-png&icon=0&color=0)](https://visitcount.itsvg.in)
+
+## 🎮 Play My Snake Game
+
+[![Play Snake](https://img.shields.io/badge/▶_PLAY_SNAKE-238636?style=for-the-badge&logo=github&logoColor=white)](https://uzair63210-png.github.io/)
