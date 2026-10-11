@@ -115,7 +115,7 @@ function tick() {
 
   snake.unshift(head);
 
-  if (head.x === food.x && head.y === food.y) {
+if (head.x === food.x && head.y === food.y) {
     eaten++;
     score += 10;
     scoreEl.textContent = score;
@@ -123,14 +123,14 @@ function tick() {
     spawnPopup(cellCenter(food.x), cellCenter(food.y), "+10");
     shake = Math.min(shake + 4, 8);
     borderGlow = 1;
+    placeFood();              // ← moved up here
     if (tickInterval > MIN_TICK) {
       tickInterval = Math.max(MIN_TICK, BASE_TICK - eaten * 3);
       speedEl.textContent = currentSpeed();
       restartLoop();
-      return; // lastTickTime already set; loop re-scheduled
+      return;                 // now it's safe to return
     }
-    placeFood();
-  } else {
+} else {
     snake.pop();
   }
 }
